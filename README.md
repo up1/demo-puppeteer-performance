@@ -11,6 +11,7 @@ browser = await puppeteer.connect({
             browserWSEndpoint: `ws://localhost:3000?--user-data-dir=/tmp/session-123`,
           });
 ```
+* Using --user-data-dir to improve perforomance of Google chrome
 
 Run test
 ```
