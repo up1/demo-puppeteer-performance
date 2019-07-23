@@ -17,3 +17,14 @@ Run test
 ```
 $npm start
 ```
+
+Before
+```
+8 specs, 0 failures
+Finished in 16.978 seconds
+```
+After
+```
+8 specs, 0 failures
+Finished in 2.721 seconds
+```
