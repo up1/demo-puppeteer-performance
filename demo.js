@@ -1,0 +1,32 @@
+const puppeteer = require('puppeteer');
+
+const URL = 'https://example.org';
+
+describe('Home Page', () => {
+    let browser = null;
+    let page = null;
+
+    beforeEach(async () => {
+        // browser = await puppeteer.launch();
+        browser = await puppeteer.connect({
+            browserWSEndpoint: `ws://localhost:3000?--user-data-dir=/tmp/session-123`,
+          });
+        page = await browser.newPage();
+        await page.goto(URL);
+    });
+
+    afterEach(async () => {
+        await browser.close();
+    });
+
+    it('should set correct title', async () => {
+        expect(await page.title()).toBe('Example Domain');
+        await page.screenshot({path: 'test_case_01.png'});
+    });
+
+    it('should have proper title', async () => {
+        expect(await page.content()).toContain('<h1>Example Domain</h1>');
+        expect(await page.$eval('h1', (e) => e.textContent)).toEqual('Example Domain');
+        await page.screenshot({path: 'test_case_02.png'});
+    });
+});

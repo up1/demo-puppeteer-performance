@@ -1,0 +1,17 @@
+{
+  "name": "demo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "ls",
+  "scripts": {
+    "start": "jasmine *.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "puppeteer": "^1.18.1"
+  },
+  "devDependencies": {
+    "jasmine": "^3.4.0"
+  }
+}
